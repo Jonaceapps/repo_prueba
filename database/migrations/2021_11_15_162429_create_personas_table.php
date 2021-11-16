@@ -41,5 +41,6 @@ class CreatePersonasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('personas');
+        //comentario2
     }
 }
