@@ -25,14 +25,6 @@ class CreatePersonasTable extends Migration
         });
     }
 
-    public function app(){
-<<<<<<< Updated upstream
-        //probando 2, noo tocar
-=======
-        //probandoo
->>>>>>> Stashed changes
-    }
-
     /**
      * Reverse the migrations.
      *
