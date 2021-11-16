@@ -26,7 +26,7 @@ class CreatePersonasTable extends Migration
     }
 
     public function app(){
-        //probando
+        //probando 2, noo tocar
     }
 
     /**
