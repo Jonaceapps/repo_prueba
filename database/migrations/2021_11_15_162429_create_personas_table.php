@@ -25,6 +25,10 @@ class CreatePersonasTable extends Migration
         });
     }
 
+    public function app(){
+        //probando
+    }
+
     /**
      * Reverse the migrations.
      *
