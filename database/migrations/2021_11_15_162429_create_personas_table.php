@@ -16,11 +16,9 @@ class CreatePersonasTable extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 150);
-            $table->string('dni', 10)-> unique();
-            $table->mediumInteger('telefono') -> unsigned() -> unique();
-            $table->text('direccion');
-            $table->string('email', 100)-> nullable()-> unique();
-            $table->string('pass', 200)-> nullable();
+            $table->string('primer_apellido', 150);
+            $table->string('segundo_apellido', 150);
+            $table->dateTime('fecha_nacimiento');
             $table->timestamps(); //fecha de creacion y fecha de ultima edicion
         });
     }
