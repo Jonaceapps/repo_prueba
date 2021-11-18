@@ -19,6 +19,9 @@ class CreatePersonasTable extends Migration
             $table->string('primer_apellido', 150);
             $table->string('segundo_apellido', 150);
             $table->dateTime('fecha_nacimiento');
+            $table->integer('padres')->unsigned();
+            $table->unsignedBigInteger('domicilio_id');
+            $table->foreign('domicilio_id')->references('id')->on('domicilios');
             $table->timestamps(); //fecha de creacion y fecha de ultima edicion
         });
     }
@@ -31,6 +34,5 @@ class CreatePersonasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('personas');
-        //comentario2
     }
 }

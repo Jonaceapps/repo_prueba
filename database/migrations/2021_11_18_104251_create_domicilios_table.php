@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDomicilios extends Migration
+class CreateDomiciliosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,8 +18,8 @@ class CreateDomicilios extends Migration
             $table->string('calle', 150);
             $table->string('numero', 150);
             $table->integer('CP')->unsigned();
-            $table->integer('residentes')->unsigned();
             $table->timestamps();
+
         });
     }
 
