@@ -17,9 +17,9 @@ class CreateDomiciliosTable extends Migration
             $table->id();
             $table->string('calle', 150);
             $table->string('numero', 150);
-            $table->integer('CP')->unsigned();
+            $table->unsignedBigInteger('CP');
+            $table->foreign('CP')->references('id')->on('codigos_postales');
             $table->timestamps();
-
         });
     }
 

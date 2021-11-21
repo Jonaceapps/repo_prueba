@@ -18,8 +18,9 @@ class CreatePersonasTable extends Migration
             $table->string('nombre', 150);
             $table->string('primer_apellido', 150);
             $table->string('segundo_apellido', 150);
-            $table->dateTime('fecha_nacimiento');
-            $table->integer('padres')->unsigned();
+            $table->date('fecha_nacimiento');
+            $table->integer('padre')->unsigned();
+            $table->integer('madre')->unsigned();
             $table->unsignedBigInteger('domicilio_id');
             $table->foreign('domicilio_id')->references('id')->on('domicilios');
             $table->timestamps(); //fecha de creacion y fecha de ultima edicion

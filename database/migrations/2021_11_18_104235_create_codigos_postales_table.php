@@ -14,7 +14,9 @@ class CreateCodigosPostalesTable extends Migration
     public function up()
     {
         Schema::create('codigos_postales', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('id')->primary();
+            $table->unsignedBigInteger('localidad');
+            $table->foreign('localidad')->references('id')->on('localidades');
             $table->timestamps();
         });
     }

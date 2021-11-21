@@ -15,6 +15,7 @@ class CreateComunidadesTable extends Migration
     {
         Schema::create('comunidades', function (Blueprint $table) {
             $table->id();
+            $table->string('comunidad_autonoma', 150);
             $table->timestamps();
         });
     }
