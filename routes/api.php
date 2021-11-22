@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonasController;
+use App\Http\Controllers\DomiciliosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('personas')->group(function(){
+
+    Route::put('/crear',[PersonasController::class, 'crear']);
+    Route::delete('/borrar/{id}',[PersonasController::class, 'borrar']);
+    Route::post('/editar/{id}', [PersonasController::class, 'editar']);
+    Route::get('/listar_personas', [PersonasController::class, 'listar_personas']);
+    Route::get('/ver_persona/{id}', [PersonasController::class, 'ver_persona']);
+
 });
 
-//Borrar
-Route::middleware('auth:sanctum2')->get('/user2', function (Request $request) {
-    return $request->user();
+
+Route::prefix('domicilios')->group(function(){
+
+    Route::put('/crear',[DomiciliosController::class, 'crear']);
+    Route::delete('/borrar/{id}',[DomiciliosController::class, 'borrar']);
+    Route::post('/editar/{id}', [DomiciliosController::class, 'editar']);
+    Route::get('/verporNumero', [DomiciliosController::class, 'verporNumero']);
+    Route::get('/ver/{id}', [DomiciliosController::class, 'ver']);
+
 });
+
+
 
 
